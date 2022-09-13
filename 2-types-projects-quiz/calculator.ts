@@ -7,8 +7,10 @@ console.log(calculate('multiply', 4, 2)); // 8
 console.log(calculate('divide', 4, 2)); // 2
 console.log(calculate('remainder', 5, 2)); // 1
 
-function calculate(type:string, a:number, b:number):number {
-    switch(type){
+type Command = 'add' | 'substract' | 'multiply' | 'divide' | 'remainder';
+
+function calculate(command:Command, a:number, b:number):number {
+    switch(command){
         case "add":
             return a+b
         case "substract":
@@ -22,6 +24,7 @@ function calculate(type:string, a:number, b:number):number {
         case "remainder":
             return a%b
         default:
+            throw Error('unknown command')
             
     }
 
