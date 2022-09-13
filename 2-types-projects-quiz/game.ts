@@ -4,24 +4,24 @@
 
 
 {
-    type Move = 'up'| 'down'|'left'|'right';
+    type Direction = 'up'| 'down'|'left'|'right';
     type Position =  {x:number, y:number}
     let position:Position = {x:0, y:0};
 
-    function move(move:Move):Position{
-        switch(move){
+    function move(direction:Direction){
+        switch(direction){
             case 'up':
-                position.y ++;
-                return position
+                position.y +=1
+                break
             case 'down':
-                position.y --;
-                return position
+                position.y -=1
+                break
             case 'left':
-                position.x --;
-                return position
+                position.x -=1
+                break
             case 'right':
-                position.x ++;
-                return position
+                position.x +=1
+                break
             default:
                 throw Error('error!')
         }
